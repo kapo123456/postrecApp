@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    
+        <!-- google maps javascript -->
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>
+
+	<!-- Upload plugin -->
+	<script src="lib/uploadplugin/angular.min.js"></script>
+	<!-- shim is needed to support non-HTML5 FormData browsers (IE8-9)-->
+	<script src="lib/uploadplugin/angular-file-upload-shim.min.js"></script> 
+	<script src="lib/uploadplugin/angular-file-upload.min.js"></script>
+	
+		<!-- Bootstrap UI lib -->
+	<script src="lib/ui-bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/controllers/memberscontroller.js"></script>
+    <script src="js/controllers/folderscontroller.js"></script>
+    <script src="js/controllers/filescontroller.js"></script>
+  </head>
+  <body ng-app="starter"  ng-controller="MembersCtrl">
+
+    <ion-pane style='background-image: url("img/bg.png");"'>
+		<ion-header-bar align-title="center" class="bar-calm">
+			<div class="buttons">
+				<a href="index.html"><button class="button icon ion-android-arrow-back"></button></a>
+			</div>
+			<h1 class="title">postrec</h1>
+			<div class="buttons">
+				<button class="button">Sign Up</button>
+			</div>
+		</ion-header-bar>
+      <ion-content class= scroll="true">
+      <center>
+      	<div style="margin-top: 20%; margin-bottom: 5%">
+      		<img id="image-1" alt="" src="img/logo.png"/>
+      	</div>
+      	<form novalidate class="css-form" name="form" ng-submit="login()">
+		<pre style="color: red;">{{error}}</pre>
+		<label class="item item-input">
+			<input name="username" ng-model="username" required placeholder="postrec ID..." type="text"/>
+		</label>
+		
+		    <div ng-show="form.$submitted || form.username.$touched">
+		      <div ng-show="form.username.$error.required">Tell us your postrec ID</div>
+		    </div>
+		
+		<label class="item item-input">
+			<input name="password" placeholder="password ..." type="password" ng-model="password" required/>
+		</label>
+		    <div ng-show="form.$submitted || form.password.$touched">
+		      <div ng-show="form.password.$error.required">Enter your password</div>
+		    </div>
+		<div style="margin-top: 4%; margin-bottom: 3%"></div>
+		<!--button id="button-1" class="button button-assertive" ng-click="MembersCtrl.login(user)">Sign In</button-->
+		<input type="submit" id="submit" value="Sign In" class="button button-assertive"/>
+		</form>
+		<div style="margin-top: 4%; margin-bottom: 3%"></div>
+		<p style="color: white"> Forget your password?... <a href="home.html" style="color: yellow">reset my passowrd</a></p>
+      </center>
+      </ion-content>    
+      </ion-pane>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<ion-modal-view> <ion-header-bar>
+<h1 class="title">Share File</h1>
+<div class="buttons">
+	<button class="button button-clear" ng-click="closeShareFile()">Close</button>
+</div>
+</ion-header-bar> <ion-content>
+<form novalidate class="css-form" name="form" ng-submit="shareFile()">
+	<pre style="color: red;">{{error}}</pre>
+	<div class="list">
+		<label class="item item-input item-floating-label"> <input
+			ng-model="shareaddress" name="shareaddress" required
+			placeholder="Enter Email" autofocus="true" required="true"
+			type="email" />
+		</label>
+		<div ng-show="form.$submitted || form.share_address.$touched">
+			<div ng-show="form.shareaddress.$error.required" style="color: red">Email
+				is required</div>
+		</div>
+		<div ng-show="form.$submitted || form.shareaddress.$touched">
+			<div ng-show="form.shareaddress.$error.email" style="color: red">Enter
+				valid email</div>
+		</div>
+		<label class="item item-input item-floating-label"> <textarea
+				ng-model="message" name="message" placeholder="Message..." cols="40"
+				rows="8"></textarea>
+		</label> <label class="item item-input"> <span class="input-label">Avaliable
+				Date:</span> <input ng-model="startdate" name="startdate" type="date" ui-date ui-date-format="mm/dd/yyyy"
+			required />
+		</label>
+		<div ng-show="form.$submitted || form.startdate.$touched">
+			<div ng-show="form.startdate.$error.required" style="color: red">Avaliable
+				Date is required</div>
+		</div>
+		<label class="item item-input"> <span class="input-label">Expire
+				Date:</span> <input ng-model="enddate" name="enddate" type="date" required />
+		</label>
+		<div ng-show="form.$submitted || form.enddate.$touched">
+			<div ng-show="form.enddate.$error.required" style="color: red">Expire
+				Date is required</div>
+		</div>
+		<label class="item item-input item-select">
+			<div class="input-label">Share Location:</div> <select name="latlng"
+			id="latlng" ng-model="latlng" required>
+				<option ng-repeat="(id, location) in locations"
+					value="{{location.latlng}}">{{location.location}}</option>
+		</select>
+		</label> <label class="item item-input"> <span class="input-label">Radius:</span>
+			<input ng-model="radius" name="radius" type="number" />
+		</label>
+		<ion-checkbox ng-model="download" name="download"
+			ng-true-value="1" ng-false-value="0">Downloadable</ion-checkbox>
+		<label class="item">
+			<button class="button button-block button-positive" type="submit"
+				id="submit">Share File</button>
+		</label>
+	</div>
+</form>
+</ion-content> </ion-modal-view>

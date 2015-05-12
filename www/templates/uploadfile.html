@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Uplaod File</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeUploadFile()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+        <div class="list">
+        <!--label class="button button-block button-danger">
+<input type="file" ng-file-select="onFileSelect($files)" multiple>
+        </label-->
+		<label class="item item-input item-stacked-label">
+			<!--span class="input-label">Choose File:</span-->
+			<input type="file" ng-file-select="onFileSelect($files)" multiple>
+			<!--input ng-model="files" name="files" autofocus="true" required="true" type="file"/-->
+		</label>
+        <label class="item">
+          <center>{{progress}}</center>
+        </label>
+      </div>
+  </ion-content>
+</ion-modal-view>

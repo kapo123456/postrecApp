@@ -1,0 +1,27 @@
+<ion-view view-title="postrec" ng-controller="FilesCtrl">
+  <ion-content class=>
+	  <div align="right">
+
+<a id="button-1" class="button icon-left ion-upload button-clear button-calm" ng-click="openUploadFile()">Upload</a>
+</div>
+	 <h3>{{folder_name}}</h3>
+	 <pre style="color: blue;">{{successmessage}}</pre>
+	 <pre style="color: red;">{{errormessage}}</pre>
+	 <ion-list>
+	  <div ng-repeat-start="(id, file) in files"></div> 
+		<ion-item href="#/app/files/{{file.file_id}}">
+			<span class="item-icon-left"><i class="icon ion-document-text"></i>
+			<a href=""   ng-click="openremotefile('{{downlaodpath}}/{{file.download_id}}/{{file.file_name}}');">
+				{{file.file_name}}
+			</a>
+			</span>
+			</a>
+			<ion-option-button class="button-assertive icon ion-code-download" ng-click='downloadFile("{{downlaodpath}}/{{file.download_id}}/{{file.file_name}}")'></ion-option-button>
+			<ion-option-button class="button-calm  icon ion-link" ng-click='openShareFile("{{file.download_id}}", "{{file.file_id}}", "{{file.file_name}}")'></ion-option-button>
+    		<ion-option-button class="button-assertive icon ion-close"></ion-option-button>
+		</ion-item>
+	<div ng-repeat-end></div>
+		
+	</ion-list>
+  </ion-content>
+</ion-view>

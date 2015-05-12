@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-calm">
+      <h1 class="title"><img id="image-1" alt="" src="img/avatar1.png" class="profile-image"/> Hatem Gad</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <!--ion-item nav-clear menu-close ng-click="login()">
+          Login
+        </ion-item  -->
+        <ion-item nav-clear menu-close href="#/app/folders">
+          <i class="ion-android-folder"></i> Folders
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/browse">
+          <i class="ion-android-archive"></i> Workspaces
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/locations">
+          <i class="ion-earth"></i> Locations
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/postrec">
+          <i class="ion-document-text"></i> Documents
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/postrec">
+          <i class="ion-image"></i> Pictures
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/postrec">
+          <i class="ion-videocamera"></i> Videos
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/postrec">
+          <i class="ion-mic-a"></i> Audios
+        </ion-item>
+      </ion-list>
+      <center>
+      <br/>
+	  <button id="button-1" class="button icon-left ion-android-stopwatch button-energized">SnapShare</button>
+	  </center>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
+</body>
+</html>

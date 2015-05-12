@@ -1,0 +1,9 @@
+<ion-view  title='<img class="title-image" src="./img/logoheader.png"  style="margin-top: 0.5%;"/>'>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/postrec/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

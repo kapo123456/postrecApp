@@ -1,0 +1,19 @@
+
+<ion-view view-title="postrec" ng-controller="FoldersCtrl">
+  <ion-content class=>
+	  <div align="right">
+
+<a id="button-1" class="button icon-left ion-plus button-clear button-calm" ng-click="openAddFolder()">New</a>
+</div>
+	 <h3>Folders</h3>
+	  <ion-list>
+	  <div ng-repeat-start="(id, folder) in folders"></div> 
+		<ion-item href="#/app/files/{{folder.download_id}}/{{folder.download_name}}">
+			<span class="item-icon-left"><i class="icon ion-folder"></i>{{folder.download_name}}</span>
+			<ion-option-button class="button-calm  icon ion-link" ng-click=""></ion-option-button>
+    		<ion-option-button class="button-assertive icon ion-close"></ion-option-button>
+		</ion-item>
+	<div ng-repeat-end></div>
+	</ion-list>	
+  </ion-content>
+</ion-view>
